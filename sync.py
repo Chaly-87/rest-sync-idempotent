@@ -212,12 +212,12 @@ def main(argv: list[str] | None = None) -> int:
     if not args.config:
         parser.error("--config is required unless --self-test is used")
 
-    config = json.loads(args.config.read_text(encoding="utf-8"))
     token = os.environ.get("API_TOKEN")
     if not token:
         print("API_TOKEN is not set", file=sys.stderr)
         return 2
 
+    config = json.loads(args.config.read_text(encoding="utf-8"))
     stats = run_sync(config, token)
     print(f"synced pages={stats['pages']} items={stats['items']} "
           f"inserted={stats['inserted']} updated={stats['updated']} unchanged={stats['unchanged']}")
