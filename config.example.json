@@ -1,0 +1,8 @@
+{
+  "base_url": "https://api.example.com",
+  "db_path": "out/sync.sqlite3",
+  "max_retries": 3,
+  "timeout_s": 10,
+  "max_pages": 50,
+  "seed": 1234
+}
